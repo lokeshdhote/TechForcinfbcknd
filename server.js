@@ -25,5 +25,6 @@ app.use(express.json());
 app.use("/api/auth", require("./routes/auth"));  // Authentication routes
 app.use("/api/jobs", require("./routes/jobs"));  // Jobs-related routes
 
+app.options('*', cors());
 const PORT =  5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
