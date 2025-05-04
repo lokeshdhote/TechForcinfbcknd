@@ -10,13 +10,16 @@ require("./models/DBconfig.js").dbconnection();
 
 const app = express();
 
-// CORS Configuration
-app.use(cors({
-  origin: 'https://tech-forcingfrnt.vercel.app', // allow your frontend domain
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true // if you're using cookies/auth headers
-}));
-// app.use(cors(corsOptions));
+// ✅ CORS Configuration (Correct Placement and Setup)
+const corsOptions = {
+  origin: 'https://tech-forcingfrnt.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  credentials: true
+};
+app.use(cors(corsOptions));
+
+// ✅ Handle preflight requests globally BEFORE routes
+app.options('*', cors(corsOptions));
 
 // Middleware to parse incoming JSON bodies
 app.use(express.json());
@@ -25,6 +28,5 @@ app.use(express.json());
 app.use("/api/auth", require("./routes/auth"));  // Authentication routes
 app.use("/api/jobs", require("./routes/jobs"));  // Jobs-related routes
 
-app.options('*', cors());
-const PORT =  5000;
+const PORT = 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
