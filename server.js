@@ -12,7 +12,8 @@ const app = express();
 
 // CORS Configuration
 const corsOptions = {
-  origin: "http://localhost:5173",  // Frontend URL (ensure this matches your frontend URL)
+  origin: "https://tech-forcingfrnt.vercel.app",  // Frontend URL (ensure this matches your frontend URL)
+  // origin: "http://localhost:5173",  // Frontend URL (ensure this matches your frontend URL)
   credentials: true,               // Enable cookies/credentials for cross-origin requests
 };
 app.use(cors(corsOptions));
@@ -24,5 +25,5 @@ app.use(express.json());
 app.use("/api/auth", require("./routes/auth"));  // Authentication routes
 app.use("/api/jobs", require("./routes/jobs"));  // Jobs-related routes
 
-const PORT = process.env.PORT || 5000;
+const PORT =  5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
