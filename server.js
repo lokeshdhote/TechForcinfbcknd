@@ -11,12 +11,12 @@ require("./models/DBconfig.js").dbconnection();
 const app = express();
 
 // CORS Configuration
-const corsOptions = {
-  origin: "https://tech-forcingfrnt.vercel.app",  // Frontend URL (ensure this matches your frontend URL)
-  // origin: "http://localhost:5173",  // Frontend URL (ensure this matches your frontend URL)
-  credentials: true,               // Enable cookies/credentials for cross-origin requests
-};
-app.use(cors(corsOptions));
+app.use(cors({
+  origin: 'https://tech-forcingfrnt.vercel.app', // allow your frontend domain
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true // if you're using cookies/auth headers
+}));
+// app.use(cors(corsOptions));
 
 // Middleware to parse incoming JSON bodies
 app.use(express.json());
