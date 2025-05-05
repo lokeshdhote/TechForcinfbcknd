@@ -12,12 +12,12 @@ const app = express();
 
 // ✅ CORS Configuration (Correct Placement and Setup)
 const corsOptions = {
+  // origin: 'https://tech-forcingfrnt.vercel.app',
   origin: [
-    'http://localhost:5173',  // Local development
-    'https://tech-forcingfrnt.vercel.app'  // Production frontend
-  ],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  'http://localhost:5173',                // Local dev
+  'https://tech-forcingfrnt.vercel.app'   // Deployed frontend
+],
+  
   credentials: true
 };
 app.use(cors(corsOptions));
