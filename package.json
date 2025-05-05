@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon app.js",
     "start": "npx nodemon",
-    "bulid":"npm install"
+    "bulid": "npm install"
   },
   "keywords": [],
   "author": "",
