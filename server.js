@@ -13,7 +13,7 @@ const app = express();
 // ✅ CORS Configuration (Correct Placement and Setup)
 const corsOptions = {
   origin: 'https://tech-forcingfrnt.vercel.app',
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  
   credentials: true
 };
 app.use(cors(corsOptions));
