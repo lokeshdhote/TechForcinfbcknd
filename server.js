@@ -12,11 +12,11 @@ const app = express();
 
 // ✅ CORS Configuration (Correct Placement and Setup)
 const corsOptions = {
-  // origin: 'https://tech-forcingfrnt.vercel.app',
-  origin: [
-  'http://localhost:5173',                // Local dev
-  'https://tech-forcingfrnt.vercel.app'   // Deployed frontend
-],
+  origin: 'https://tech-forcingfrnt.vercel.app',
+//   origin: [
+//   'http://localhost:5173',                // Local dev
+//   'https://tech-forcingfrnt.vercel.app'   // Deployed frontend
+// ],
   
   credentials: true
 };
