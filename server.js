@@ -22,8 +22,7 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
-// ✅ Handle preflight requests globally BEFORE routes
-// app.options('*', cors(corsOptions));
+
 
 // Middleware to parse incoming JSON bodies
 app.use(express.json());
