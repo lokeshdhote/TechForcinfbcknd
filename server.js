@@ -12,17 +12,18 @@ const app = express();
 
 // ✅ CORS Configuration (Correct Placement and Setup)
 const corsOptions = {
-  // origin: 'https://tech-forcingfrnt.vercel.app',
-  origin: [
-    'https://tech-forcingfrnt.vercel.app' , // Deployed frontend
-  'http://localhost:5173',                // Local dev   
-],
+  // origin: 'https://tech-forcingfrnt.vercel.app/',
+//   origin: [
+//     'https://tech-forcingfrnt.vercel.app' , // Deployed frontend
+//   'http://localhost:5173',                // Local dev   
+// ],
   
   credentials: true
 };
 app.use(cors(corsOptions));
 
-
+// ✅ Handle preflight requests globally BEFORE routes
+// app.options('*', cors(corsOptions));
 
 // Middleware to parse incoming JSON bodies
 app.use(express.json());
